@@ -10,7 +10,7 @@ import { map } from 'rxjs/operators';
 })
 export class AccountListComponent implements OnInit {
   public totalAmount: number;
-  public accounts: Accounts[];
+  public accounts: Accounts[] = [];
   constructor(private accountsService: AccountsService) { }
 
   ngOnInit() {

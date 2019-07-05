@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 import { AccountListComponent } from './account-list.component';
 import { AccountsService } from './../../services/accounts.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoadingBoxComponent } from './loading-box/loading-box.component';
 
 @NgModule({
-  declarations: [AccountListComponent],
+  declarations: [AccountListComponent, LoadingBoxComponent],
   imports: [
     CommonModule,
     HttpClientModule
