@@ -1,0 +1,33 @@
+<div class="shadow my-5 bg-white rounded-lg table-responsive">
+    <div class="p-4">
+        <h3 class="acme__headline">Account List</h3>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Account Number</th>
+                <th scope="col">Account Type</th>
+                <th scope="col">Balance</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let account of accounts">
+                <td scope="row">{{ account.account_number }}</td>
+                <td>{{ account.account_type }}</td>
+                <td>{{ account.balance | currency:'ZAR ':'code' }}</td>
+                <td><button type="button" class="d-block m-auto btn btn-success">Withdraw</button></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">
+                    <h4>Balance</h4>
+                </th>
+                <th colspan="2">
+                    <h4>{{ totalAmount | currency:'ZAR ':'code' }}</h4>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
