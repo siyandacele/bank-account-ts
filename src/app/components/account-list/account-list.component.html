@@ -16,7 +16,9 @@
                 <td scope="row">{{ account.account_number }}</td>
                 <td>{{ account.account_type }}</td>
                 <td>{{ account.balance | currency:'ZAR ':'code' }}</td>
-                <td><button type="button" class="d-block m-auto btn btn-success">Withdraw</button></td>
+                <td><button type="button" 
+                            class="d-block m-auto btn {{ account.canWithDraw ? 'btn-success' : 'btn-outline-dark'}}" 
+                            (click)="onWithdraw()" [disabled]="!account.canWithDraw">Withdraw</button></td>
             </tr>
         </tbody>
         <tfoot>

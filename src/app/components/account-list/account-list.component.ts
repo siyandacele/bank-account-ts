@@ -17,11 +17,24 @@ export class AccountListComponent implements OnInit {
   ngOnInit() {
     this.accountsService.getAccounts().subscribe(accounts => {
 
-      this.accounts = accounts;
+      this.accounts = accounts.map(account => {
+        return {
+          ...account,
+          canWithDraw: this.shouldWithDraw(account)
+        };
+      });
       this.totalAmount = accounts.reduce((acc, account) =>
         +account.balance + acc, 0);
 
     });
+  }
+
+  private shouldWithDraw(account: Accounts): boolean {
+    return !(account.account_type === 'savings' && account.balance <= -20
+          || account.account_type === 'cheque' && account.balance <= -500);
+  }
+  onWithdraw(): void {
+    alert('Success');
   }
 
 
