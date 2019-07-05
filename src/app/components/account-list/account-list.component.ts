@@ -6,8 +6,7 @@ import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-account-list',
-  templateUrl: './account-list.component.html',
-  styleUrls: ['./account-list.component.scss']
+  templateUrl: './account-list.component.html'
 })
 export class AccountListComponent implements OnInit {
   public totalAmount: number;
