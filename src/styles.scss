@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import './assets/scss/main.scss';
+html {
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background: $background-color;
+}
+
+
+.toolbar--dark-red {
+    background-image: linear-gradient(to right, $primary, $secondary);
+    color: $white;
+}
+
+.acme__headline {
+    color: $primary;
+    font-weight: 500;
+}
